@@ -1,0 +1,10 @@
+.all{
+    border: solid black;
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+.leftPanel {
+    border: solid blue;
+    min-width: 200px;
+}
