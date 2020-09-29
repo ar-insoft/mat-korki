@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Panel } from './mat_korki/Panel';
 //import * as MathJaxExample from './mat_korki/MathJaxExample';
-const test = require('./mat_korki/MathJaxExample');
+//const test = require('./mat_korki/MathJaxExample');
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       </header>
     </div>
     <Panel />
-  {test()}{/* <MathJaxExample /> */}
+      {/* {test()} */}{/* <MathJaxExample /> */}
     </>
   );
 }
