@@ -9,7 +9,7 @@
  */
 export function zadanieOIdDodajDoWybranych(zadania, id, wybrane) {
     //console.log('zadanieOIdDodajDoWybranych', typeof zadania, zadania)
-    const zadanie = zadania.filter(el => el.id === id).reduceRight((accumulator, currentValue) => currentValue)
+    const zadanie = zadania.filter(el => el.id === id).reduceRight((accumulator, currentValue) => currentValue, {})
     return []
 }
 

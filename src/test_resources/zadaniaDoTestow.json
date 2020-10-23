@@ -1,5 +1,4 @@
-﻿{
-    "zadaniaDoTestow": [
+﻿[
     {
 		"typ": "katalog",
         "id": "101",
@@ -25,7 +24,7 @@
 		"typ": "katalog",
         "id": "104",
         "parent_id": "",
-        "nr": "1",
+        "nr": "4",
         "title": "Funkcje"
     },
     {
@@ -43,4 +42,3 @@
         "text": "Funkcja f przyporządkowuje każdej liczbie naturalnej większej od 1 jej największy dzielnik będący liczbą pierwszą. Spośród liczb: f(42), f(44), f(45), f(48) największa to"
     }
 ]
-}
