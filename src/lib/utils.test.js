@@ -33,4 +33,5 @@ describe('utils.zadanieOIdDodajDoWybranych', () => {
         expect(utils.zadanieOIdDodajDoWybranych(zadaniaJson, 101, []).length).toBe(1);
     })
 
+    
 })

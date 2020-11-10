@@ -24,22 +24,48 @@ export const Panel = () => {
 
     function dodajDoWybranych(id) {
         const zadanie = listaZadan.filter(el => el.id === id).reduceRight((accumulator, currentValue) => currentValue)
+
+        const index = listaWybranych.indexOf(id)
+        if (index === -1) {
+            setListaWybranych(listaWybranych.concat(id))
+        }
     }
 
     function usunZWybranych(id) {
-
+        const listaWybranychCopy = listaWybranych.slice() // [...listaWybranych]
+        const index = listaWybranychCopy.indexOf(id);
+        if (index > -1) {
+            listaWybranychCopy.splice(index, 1);
+            setListaWybranych(listaWybranychCopy)
+        }
     }
-        //console.log('zadaniaDoTestow', zadaniaDoTestow)
+    
+    const callbacks = {
+        dodajDoWybranych: (id) => {
+            const index = listaWybranych.indexOf(id)
+            if (index === -1) {
+                setListaWybranych(listaWybranych.concat(id))
+            }
+        },
+        usunZWybranych: (id) => {
+            const listaWybranychCopy = listaWybranych.slice() // [...listaWybranych]
+            const index = listaWybranychCopy.indexOf(id);
+            if (index > -1) {
+                listaWybranychCopy.splice(index, 1);
+                setListaWybranych(listaWybranychCopy)
+            }
+        }
+    }
 
     return (
         <div className="all">
-            <Left listaZadan={listaZadan} />
-            <Main />
+            <Left listaZadan={listaZadan} listaWybranych={listaWybranych}/>
+            <Main listaZadan={listaZadan} listaWybranych={listaWybranych} />
         </div>
     )
 }
 
-const Left = ({listaZadan}) => {
+const Left = ({ listaZadan, listaWybranych}) => {
 
     return (
         <div className="leftPanel">
@@ -52,11 +78,11 @@ const Left = ({listaZadan}) => {
     )
 }
 
-const Main = () => {
+const Main = ({ listaZadan, listaWybranych }) => {
 
     return (
         <div className="mainPanel">
-            main
+            main {listaWybranych.toString()}
             <Container>
                 Container
             </Container>
