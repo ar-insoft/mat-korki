@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Accordion, Label, Icon, List } from "semantic-ui-react";
 import * as utils from '../lib/utils.js';
 
-export const WidokAccordion = ({listaZadan}) => {
+export const WidokAccordion = ({ listaZadan, callbacks}) => {
     return (
     <Accordion fluid styled>
         {
@@ -19,7 +19,7 @@ export const WidokAccordion = ({listaZadan}) => {
                                     <List.Content>
                                         <List.Header as='a'>{zad.typ}. {zad.id}</List.Header>
                                         <List.Description as='a'>{zad.text}</List.Description>
-                                        <List.Icon name='share' />
+                                        <List.Icon name='share' onClick={() => callbacks.dodajDoWybranych(zad.id)} />
                                     </List.Content>
                                 </List.Item>)}
                         </List>

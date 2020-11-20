@@ -59,20 +59,20 @@ export const Panel = () => {
 
     return (
         <div className="all">
-            <Left listaZadan={listaZadan} listaWybranych={listaWybranych}/>
+            <Left listaZadan={listaZadan} listaWybranych={listaWybranych} callbacks={callbacks} />
             <Main listaZadan={listaZadan} listaWybranych={listaWybranych} />
         </div>
     )
 }
 
-const Left = ({ listaZadan, listaWybranych}) => {
+const Left = ({ listaZadan, listaWybranych, callbacks}) => {
 
     return (
         <div className="leftPanel">
             left
             <Container>
                 Container
-               <WidokAccordion listaZadan={listaZadan} />
+               <WidokAccordion listaZadan={listaZadan} callbacks={callbacks} />
             </Container>
         </div>
     )
