@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Accordion, Label, Icon, List } from "semantic-ui-react";
+import MyMathJax from './MyMathJax';
 import * as utils from '../lib/utils.js';
 
-export const WidokAccordion = ({ listaZadan, callbacks}) => {
+export const WidokAccordion = ({ listaZadan, listaWybranych, callbacks}) => {
     return (
     <Accordion fluid styled>
         {
@@ -18,8 +19,16 @@ export const WidokAccordion = ({ listaZadan, callbacks}) => {
                                 <List.Item>
                                     <List.Content>
                                         <List.Header as='a'>{zad.typ}. {zad.id}</List.Header>
-                                        <List.Description as='a'>{zad.text}</List.Description>
-                                        <List.Icon name='share' onClick={() => callbacks.dodajDoWybranych(zad.id)} />
+                                        <List.Description as='a'>
+                                            <MyMathJax rownanie={zad.text} />
+                                        </List.Description>
+                                        {
+                                            listaWybranych.includes(zad.id)
+                                            ?
+                                                <List.Icon name='cancel' onClick={() => callbacks.usunZWybranych(zad.id)} />
+                                            :
+                                                <List.Icon name='share' onClick={() => callbacks.dodajDoWybranych(zad.id)} />
+                                        }
                                     </List.Content>
                                 </List.Item>)}
                         </List>

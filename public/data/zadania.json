@@ -18,7 +18,7 @@
         "id": "2",
         "parent_id": "101",
         "nr": "2",
-        "text": "Suma log_8 16 + 1 jest równa..."
+        "text": "Suma $$log_8 16 + 1$$ jest równa"
     },
     {
 		"typ": "katalog",
@@ -32,7 +32,7 @@
         "id": "20",
         "parent_id": "104",
         "nr": "5",
-        "text": "Funkcja wykładnicza określona wzorem f(x) = 3 exp(x) przyjmuje wartość 6 dla argumentu x. x = ?"
+        "text": "Funkcja wykładnicza określona wzorem $$f(x) = 3^x$$ przyjmuje wartość 6 dla argumentu x. x = ?"
     },
     {
 		"typ": "zadanie",

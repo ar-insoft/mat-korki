@@ -18,7 +18,8 @@
         "id": "2",
         "parent_id": "101",
         "nr": "2",
-        "text": "Suma log_8 16 + 1 jest równa..."
+        "text": "f(x) = int_{-infty}^infty hat f(xi),e^{2 pi i xi x},dxi",
+        "textOrg": "Suma log_8 16 + 1 jest równa"
     },
     {
 		"typ": "katalog",
