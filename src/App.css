@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 10vmin;
+  height: 8vmin;
   pointer-events: none;
 }
 
@@ -25,7 +25,19 @@
 .App-link {
   color: #61dafb;
 }
-
+.wybrane_div {
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row;
+}
+.wybrane_zad_card {
+  width: 200px;
+  height: 70px;
+  overflow: hidden;
+  text-overflow: clip;
+  background-color: azure;
+  margin: 3px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

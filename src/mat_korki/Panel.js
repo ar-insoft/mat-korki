@@ -5,6 +5,7 @@ import './Panel.css'
 import './WidokAccordion'
 import { WidokAccordion } from './WidokAccordion';
 import { zadaniaDoTestow } from '../test_resources/zadaniaDoTestow.json'
+import * as utils from '../lib/utils.js';
 
 export const Panel = () => {
     const [listaZadan, setListaZadan] = useState([])
@@ -59,7 +60,7 @@ export const Panel = () => {
 
     return (
         <div className="all">
-            <Left listaZadan={listaZadan} listaWybranych={listaWybranych} callbacks={callbacks} />
+            {/* <Left listaZadan={listaZadan} listaWybranych={listaWybranych} callbacks={callbacks} /> */}
             <Main listaZadan={listaZadan} listaWybranych={listaWybranych} callbacks={callbacks} />
         </div>
     )
@@ -82,9 +83,20 @@ const Main = ({ listaZadan, listaWybranych, callbacks}) => {
 
     return (
         <div className="mainPanel">
-            main {listaWybranych.toString()}
+            <div className="wybrane_div">
+                {listaWybranych.map(zadId => {
+                    const zad = utils.zadanieById(listaZadan, zadId)
+                    return (
+                        <div className="wybrane_zad_card" title={zad.text}>
+                            {zad.nr}<br/> {zad.text}
+                        </div>
+                    )
+                    
+                })}
+            </div>
+                {/* main {listaWybranych.toString()} */}
             <Container>
-                Container
+               <WidokAccordion listaZadan={listaZadan} listaWybranych={listaWybranych} callbacks={callbacks} />
             </Container>
         </div>
     )

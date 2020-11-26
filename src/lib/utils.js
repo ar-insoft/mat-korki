@@ -16,3 +16,7 @@ export function zadanieOIdDodajDoWybranych(zadania, id, wybrane) {
 export function zadaniaByParent(zadania, parent_id) {
     return zadania.filter(el => el.parent_id === parent_id)
 }
+
+export function zadanieById(zadania, id) {
+    return zadania.find(el => el.id === id)
+}

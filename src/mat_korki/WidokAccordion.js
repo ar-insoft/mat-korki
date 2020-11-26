@@ -5,11 +5,11 @@ import * as utils from '../lib/utils.js';
 
 export const WidokAccordion = ({ listaZadan, listaWybranych, callbacks}) => {
     return (
-    <Accordion fluid styled>
+        <Accordion fluid styled exclusive={false} defaultActiveIndex={[1, 2]}>
         {
             //console.log('listaZadan', listaZadan) utils.zadaniaByParent(listaZadan, '')
                 utils.zadaniaByParent(listaZadan, '').map(zadanie => <>
-                    <Accordion.Title active={true} >
+                    <Accordion.Title index={zadanie.id} active={true}>
                         <Icon name='dropdown' />
                         {zadanie.nr}. {zadanie.title}                   
                     </Accordion.Title>
@@ -18,17 +18,19 @@ export const WidokAccordion = ({ listaZadan, listaWybranych, callbacks}) => {
                             {utils.zadaniaByParent(listaZadan, zadanie.id).map(zad =>
                                 <List.Item>
                                     <List.Content>
-                                        <List.Header as='a'>{zad.typ}. {zad.id}</List.Header>
-                                        <List.Description as='a'>
+                                        <List.Header>
+                                            {zad.typ}. {zad.id}     _
+                                            {
+                                                listaWybranych.includes(zad.id)
+                                                    ?
+                                                    <List.Icon name='cancel' color="red" onClick={() => callbacks.usunZWybranych(zad.id)} />
+                                                    :
+                                                    <List.Icon name='share' color="green" onClick={() => callbacks.dodajDoWybranych(zad.id)} />
+                                            }
+                                        </List.Header>
+                                        <List.Description>
                                             <MyMathJax rownanie={zad.text} />
                                         </List.Description>
-                                        {
-                                            listaWybranych.includes(zad.id)
-                                            ?
-                                                <List.Icon name='cancel' onClick={() => callbacks.usunZWybranych(zad.id)} />
-                                            :
-                                                <List.Icon name='share' onClick={() => callbacks.dodajDoWybranych(zad.id)} />
-                                        }
                                     </List.Content>
                                 </List.Item>)}
                         </List>
