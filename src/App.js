@@ -15,6 +15,7 @@ function App() {
         </p>
           <img src={logo} className="App-logo" alt="logo" />
           <MyMathJax rownanie="$$f(x) = int_{-infty}^infty hat f(xi),e^{2 pi i xi x},dxi$$ $$ 1/3 $$" />
+          <a href="http://asciimath.org/" target="_blank">asciimath</a>
       </header>
     </div>
     <Panel />
